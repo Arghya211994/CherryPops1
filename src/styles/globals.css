@@ -202,10 +202,10 @@
   transition: .3s ease-in-out;
 }
 
-.product-detail-image:hover {
+/* .product-detail-image:hover {
   background-color: #f02d34;
 
-}
+} */
 
 .small-images-container {
   display: flex;
@@ -687,6 +687,13 @@ margin: auto;
   }
   .success{
     height: 350px;
+  }
+
+  .drop{
+   display: none;
+  }
+  .cart-image{
+    display: none;
   }
 }
 

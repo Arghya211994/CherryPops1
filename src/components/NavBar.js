@@ -19,6 +19,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { removeToCartaction } from "../../action/productAction";
 
 
+
 const CustomLink = ({ href, title, className = "" }) => {
 
   const ShoppingCartDropdown = () => {
@@ -170,6 +171,7 @@ const NavBar = () => {
               <CustomMobileLink href="/" title="Home" className="" toggle={handleClick} />
               <CustomMobileLink href="/shop" title="Shop" className="" toggle={handleClick} />
               <CustomMobileLink href="/contactUs" title="Contact Us" className="" toggle={handleClick} />
+             
               
             </nav>
 
@@ -195,7 +197,10 @@ const NavBar = () => {
             className="cart-icon"
             onMouseEnter={() => setDropdown(true)}
             onMouseLeave={() => setDropdown(false)}
-            onClick={() => router.push('/cart')}
+            onClick={() => {
+              router.push('/cart');
+              handleClick(); 
+            }}
           >
             <AiOutlineShopping
               className="cart-icon2 text-white"

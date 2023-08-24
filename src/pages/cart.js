@@ -39,6 +39,7 @@ const cart = () => {
                     >
                       <div>
                         <Image src={product.image1} width={100} height={100} 
+                        className='cart-image' 
                         />
                       </div>
                       <h1 >{product.name}</h1>

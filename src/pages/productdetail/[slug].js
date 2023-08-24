@@ -28,7 +28,7 @@ const productDetail = () => {
       ageRange: 'Puppy',
       itemForm: 'Stick',
       specificUses: 'Weight',
-      specialIngredients: ['Chicken', 'Turmeric', 'Gluten free', 'Carbohydrate free'],
+      specialIngredients: ['Chicken, Turmeric, Gluten free, Carbohydrate free'],
       netQuantity: '90.0 gram',
       // numberOfItems: 1,
       useByDate: '22 JAN 2024',
@@ -37,10 +37,10 @@ const productDetail = () => {
       countInStock: 8,
       ProductName: "Chicken Jerky",
       image1: "/images/assets/1.png",
-      image2: "/images/assets/CJ.png",
-      image3: "/images/assets/CJ_Back.jpg",
-      image4: "/images/assets/Feeding_Guide.jpg",
-    },
+      image2: "/images/assets/CJ_Back.jpg",
+      image3: "/images/assets/Feeding_Guide.jpg",
+      image4: "/images/assets/CJ.png",
+     },
     {
       id: 2,
       brand: 'Cherrypops',
@@ -160,7 +160,7 @@ const productDetail = () => {
               <h4 className='font-bold text-2xl'>Details:</h4>
               <p>{newproduct.details}</p>
               <h4 className='font-bold text-2xl'>Price:</h4>
-              <p className='price'>{newproduct.price}</p>
+              <p className='price'>₹ {newproduct.price}</p>
 
               <p className='font-bold '>Select Quantity:&nbsp;&nbsp;
               <select name="qty" id="qty" style={{ cursor: "pointer" }}
