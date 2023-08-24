@@ -143,7 +143,7 @@ const NavBar = () => {
                           <p>{product.name}</p>
                           <p>₹{product.price}</p>
                         </div>
-                        <button type='button' className='delete2' onClick={() => removehandler(product._id)}>
+                        <button type='button' className='delete2' onClick={() => removehandler(product.id)}>
                           <MdDeleteForever />
                         </button>
                       </div>
@@ -215,7 +215,7 @@ const NavBar = () => {
                           <p>{product.name}</p>
                           <p>{product.price}</p>
                         </div>
-                        <button type='button' className='delete2' onClick={() => removehandler(product._id)}>
+                        <button type='button' className='delete2' onClick={() => removehandler(product.id)}>
                           <MdDeleteForever />
                         </button>
                       </div>

@@ -28,33 +28,39 @@ const cart = () => {
       <TransitionEffect />
       <Layout>
         <div className='grid grid-cols-10 gap-6'>
-          <div className='col-span-7  md:col-span-12'>
+          <div className='col-span-7 md:col-span-12'>
             {
               cartItems && cartItems.length > 0 ? (
                 <div>
                   {cartItems.map((product) => (
                     <div
-                      className='cart-each-items'
+                      className='cart-each-items cart-product'
                       key={product._id}
                     >
-                      <div>
+                      <div className='cart-image-main'>
                         <Image src={product.image1} width={100} height={100} 
                         className='cart-image' 
                         />
                       </div>
-                      <h1 >{product.name}</h1>
-                      <p>₹{product.price}</p>
+                      <div className='cart-name'>
+                      <h1 >Name: {product.name}</h1>
+                      </div>
+                      <div className='cart-price'>
+                      <p>Price: ₹{product.price}</p>
+                      </div>
+                     
 
+                    <div className='mobile-delete'>
                       <p>Quantity : {product.qty}</p>
 
                       <button
                         type='button'
-                        className='delete'
+                        className='delete' 
                         onClick={() => removehandler(product.id)}
                       >
                         <MdDeleteForever />
                       </button>
-
+                      </div>
                     </div>
                   ))}
                 </div>
