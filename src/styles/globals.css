@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+:root {
+  color-scheme: only light;
+}
 
 .contact-box {
   border: 1px solid black;
