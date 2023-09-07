@@ -43,7 +43,7 @@ export default function Home() {
         <link rel="icon" href="/images/assets/Cherrypops_logo.png" />
       </Head>
       <TransitionEffect />
-      <main className="flex item-center text-dark w-full min-h-screen dark:text-light">
+      <main className="flex item-center text-dark w-full min-h-screen">
         <Layout className="pt-0 md:pt-16 sm:pt-8">
           <div className="flex items-center justify-between w-full lg:flex-col">
 

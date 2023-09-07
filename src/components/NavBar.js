@@ -8,7 +8,6 @@ import { motion } from "framer-motion"
 import { AiOutlineShopping } from 'react-icons/ai';
 
 import { FaFacebook } from 'react-icons/fa';
-import useThemeSwitcher from "./hooks/useThemeSwitcher";
 import Instagram from "../../public/images/assets/instagram.png"
 import Facebook from "../../public/images/assets/facebook.png"
 import WhatsApp from "../../public/images/assets/whatsapp.png"
