@@ -31,13 +31,12 @@ const productDetail = () => {
       specialIngredients: ['Chicken, Turmeric, Gluten free, Carbohydrate free'],
       netQuantity: '90.0 gram',
       // numberOfItems: 1,
-      useByDate: '22 JAN 2024',
       price: 290,
       details: "Chicken Jerky Details",
       countInStock: 8,
       ProductName: "Chicken Jerky",
       image1: "/images/assets/1.png",
-      image2: "/images/assets/CJ_Back.jpg",
+      image2: "/images/assets/CJ_Back.png",
       image3: "/images/assets/Feeding_Guide.jpg",
       image4: "/images/assets/CJ.png",
      },
@@ -58,7 +57,7 @@ const productDetail = () => {
       countInStock: 5,
       ProductName: "Fish Bites",
       image1: "/images/assets/3.png",
-      image2: "/images/assets/FB_Back.jpg",
+      image2: "/images/assets/FB_Back.png",
       image3: "/images/assets/FB_Guide.jpg",
       image4: "/images/assets/FB_Detail.jpg",
     }
@@ -134,9 +133,9 @@ const productDetail = () => {
               <div className='image-container'>
                 <Image src={array3.image == undefined ? imageArray2[0] : array3.image}
                   className='product-detail-image'
-                  width={100}
+                  width={200}
                   height={100}
-                  alt='image'
+                  alt='DetailImage'
                 />
               </div>
               <div
@@ -148,7 +147,7 @@ const productDetail = () => {
                       width={60}
                       height={60}
                       onMouseEnter={() => changehandler(index)}
-                      alt='image'
+                      alt='SmallImage'
                     />
                   ))
                 }
@@ -216,10 +215,6 @@ const productDetail = () => {
                     <p><strong>Number of Items:</strong></p>
                     {/* <p>{newproduct.numberOfItems}</p> */}
                     <p>{newproduct.countInStock}</p>
-                  </div>
-                  <div className="product-info-item">
-                    <p><strong>Use by:</strong></p>
-                    <p>{newproduct.useByDate}</p>
                   </div>
                 </div>
               </div>

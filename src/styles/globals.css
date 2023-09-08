@@ -187,7 +187,8 @@
 
 /*----------------Product Detail------------*/
 .product-detail-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   margin: 40px;
   margin-top: 60px;
@@ -605,7 +606,7 @@ margin: auto;
 
 @media((min-width:0px) and (max-width:767px)) {
   .product-detail-container {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
   }
 
   .product-detail-container .product-detail-image {
