@@ -20,16 +20,16 @@ const TvCarousel = () => {
               showArrows={false}
             >
               <div className='carousel-img'>
-<img src="/images/Assets/tvCarousel1.jpg" alt='img1' />
+<img src="/images/assets/tvCarousel1.jpg" alt='img1' />
 </div>
 <div className='carousel-img'>
-<img src="/images/Assets/tvCarousel2.jpg" alt='img2' />
+<img src="/images/assets/tvCarousel2.jpg" alt='img2' />
 </div>
 <div className='carousel-img'>
-<img src="/images/Assets/tvCarousel3.jpg" alt='img3' />
+<img src="/images/assets/tvCarousel3.jpg" alt='img3' />
 </div>
 <div className='carousel-img'>
-<img src="/images/Assets/tvCarousel4.jpg" alt='img4' />
+<img src="/images/assets/tvCarousel4.jpg" alt='img4' />
 </div>
             </Carousel>
           </div>
