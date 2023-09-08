@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import { cartproductReducer } from "../reducers/productReducer";
 import { shippingAddressReducer } from "../reducers/addressReducer";
-import { placeOrderReducer } from "../reducers/orderReducer";
+import { orderpaymentDetailReducer, placeOrderReducer } from "../reducers/orderReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // This will use local storage
@@ -20,7 +20,8 @@ const shippingAddressPersistConfig = {
 const rootReducer = combineReducers({
   cartproduct: cartproductReducer,
   shippingAddress:shippingAddressReducer,
-  placeOrder:placeOrderReducer
+  placeOrder:placeOrderReducer,
+  orderpaymentDetail:orderpaymentDetailReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

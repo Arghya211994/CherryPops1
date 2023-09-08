@@ -8,14 +8,37 @@ import { MdDeleteForever } from 'react-icons/md'
 import image from "/public/images/assets/1.png"
 import { addToCartaction, removeToCartaction } from '../../action/productAction'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const cart = () => {
   const dispatch = useDispatch()
+  const router = useRouter()
+
   const cartproduct = useSelector(state => state.cartproduct)
   const { cartItems } = cartproduct;
 
   const removehandler = (id) => {
     dispatch(removeToCartaction(id))
+    toast.success("Product deleted from the cart!",{
+      style:{
+        fontSize:"1rem"
+      }
+    })
+  }
+  
+  const checkoutHandler = () => {
+    if(cartItems && cartItems.length > 0){
+      router.push("/checkout2")
+    }else{
+      toast.error("Your Cart is empty",{
+        style:{
+          fontSize:"1rem"
+        }
+      })
+    }
   }
 
   return (
@@ -89,15 +112,16 @@ const cart = () => {
               <p>₹{cartItems.reduce((acc, item) => acc + item.price*item.qty, 0)}</p>
             </div>
 
-            <Link
-              href="/checkout2"
+            <div
+              onClick={checkoutHandler}
               type="button"
               className='bg-black text-white font-semibold py-2 px-4 my-10 rounded-full !text-center'
-            >CheckOut</Link>
+            >CheckOut</div>
           </div>
         </div>
 
       </Layout>
+      <ToastContainer/>
     </>
   )
 }

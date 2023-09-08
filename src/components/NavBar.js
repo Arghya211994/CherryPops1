@@ -17,7 +17,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { MdDeleteForever } from "react-icons/md";
 import { removeToCartaction } from "../../action/productAction";
 
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CustomLink = ({ href, title, className = "" }) => {
 
@@ -83,10 +84,16 @@ const NavBar = () => {
 
   const removehandler = (id) => {
     dispatch(removeToCartaction(id))
+    toast.success("Product deleted from the cart!",{
+      style:{
+        fontSize:"1rem"
+      }
+    })
   }
 
 
   return (
+    <>
     <header className="w-full px-32 py-8 font-medium flex items-center justify-between
     dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8">
 
@@ -237,6 +244,8 @@ const NavBar = () => {
         <Logo />
       </div>
     </header>
+    <ToastContainer/>
+    </>
   );
 };
 

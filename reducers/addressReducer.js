@@ -1,4 +1,4 @@
-import { ADD_SHIPPING_ADDRESS } from "../constant/addressConstant";
+import { ADD_SHIPPING_ADDRESS, SHIPPING_RESET } from "../constant/addressConstant";
 
 export const shippingAddressReducer = (state = {},action) => {
     switch(action.type){
@@ -7,6 +7,8 @@ export const shippingAddressReducer = (state = {},action) => {
               ...state,
                 ...action.payload
             }
+        case SHIPPING_RESET:
+            return {}
         default:
             return state
     }

@@ -4,6 +4,9 @@ import TransitionEffect from '@/components/TransitionEffect';
 import Image from 'next/image'
 import { useRouter } from 'next/router';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 //redux
 import { addToCartaction } from '../../../action/productAction';
 import { useDispatch, useSelector } from 'react-redux';
@@ -107,7 +110,11 @@ const productDetail = () => {
 
       dispatch(addToCartaction(qty,data))
 
-      window.alert("Product is Added")
+      toast.success("Product is added to the cart!",{
+        style: {
+          fontSize: '1rem',
+        }
+      })
     }
   }
 
@@ -223,6 +230,7 @@ const productDetail = () => {
         }
 
       </Layout>
+      <ToastContainer/>
     </>
   )
 }

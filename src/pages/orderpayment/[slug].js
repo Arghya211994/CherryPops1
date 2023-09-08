@@ -2,16 +2,23 @@ import Layout from '@/components/Layout'
 import TransitionEffect from '@/components/TransitionEffect'
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Razorpay from "../../../public/images/assets/Razorpay.png"
 import Image from 'next/image'
 import Head from 'next/head'
+import { orderpaymentDetailAction } from '../../../action/orderAction'
 
 const orderpayment = () => {
 
   const router = useRouter();
   const { slug } = router.query;
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(orderpaymentDetailAction(slug))
+  },[dispatch,slug])
 
   const loadScript = (src) => {
     return new Promise((resolve, reject) => {
@@ -32,11 +39,11 @@ const orderpayment = () => {
     });
   }, []);
 
-  const shippingAddress = useSelector(state => state.shippingAddress)
-  const cartproduct = useSelector(state => state.cartproduct)
-  const { cartItems } = cartproduct
 
-  const totalcartPrice = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+  const orderpaymentDetail = useSelector(state => state.orderpaymentDetail)
+  const {shippingAddress,orderItems} = orderpaymentDetail
+
+  const totalcartPrice = orderItems && orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
 
   const paymentHandler = async () => {
     const { data: { order } } = await axios.post("https://cherrypopsbackend.onrender.com/api/checkout", {
@@ -91,10 +98,10 @@ const orderpayment = () => {
           fontWeight: "500",
           fontSize: "25px"
         }}>Shipping Address</h3>
-        <p className='mb-3'>Address: {shippingAddress.address}</p>
-        <p className='mb-3'>City: {shippingAddress.city}</p>
-        <p className='mb-3'>PostalCode: {shippingAddress.postalCode}</p>
-        <p className='mb-3'>Country: {shippingAddress.country}</p>
+        <p className='mb-3'>Address: {shippingAddress && shippingAddress.address}</p>
+        <p className='mb-3'>City: {shippingAddress && shippingAddress.city}</p>
+        <p className='mb-3'>PostalCode: {shippingAddress && shippingAddress.postalCode}</p>
+        <p className='mb-3'>Country: { shippingAddress && shippingAddress.country}</p>
         <hr />
         </div>
         
@@ -112,7 +119,7 @@ const orderpayment = () => {
           fontSize: "25px"
         }}>Order Items</h3>
         {
-          cartItems.map((item) => (
+          orderItems && orderItems.map((item) => (
             <div key={item._id}>
               <p className='mb-3'>{item.name}</p>
               <p className='mb-3'>₹{item.price}</p>
@@ -165,3 +172,5 @@ const orderpayment = () => {
 }
 
 export default orderpayment
+
+

@@ -6,6 +6,9 @@ import { addShippingAction } from '../../action/shippingAction'
 import {useRouter} from 'next/router'
 import Head from 'next/head'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const checkout2 = () => {
   const [address,setAddress] = useState("")
   const [city,setCity] = useState("")
@@ -16,14 +19,47 @@ const checkout2 = () => {
   const router = useRouter()
 
   const submitHandler = () => {
-    const data = {
-      address,
-      city,
-      postalCode,
-      country
+    if(!address && !city && !postalCode && !country){
+      toast.error("Please fill all the fields!",{
+        style:{
+          fontSize:"1rem"
+        }
+      })
+    }else if(!address){
+      toast.error("Address is not present!",{
+        style:{
+          fontSize:"1rem"
+        }
+      })
+    }else if(!city){
+      toast.error("City is not present!",{
+        style:{
+          fontSize:"1rem"
+        }
+      })
+    }else if(!postalCode){
+      toast.error("Postal Code is not present!",{
+        style:{
+          fontSize:"1rem"
+        }
+      })
+    }else if(!country){
+      toast.error("Country is not present!",{
+        style:{
+          fontSize:"1rem"
+        }
+      })
+    }else{
+      const data = {
+        address,
+        city,
+        postalCode,
+        country
+      }
+      dispatch(addShippingAction(data))
+      router.push("/placeorder")
     }
-    dispatch(addShippingAction(data))
-    router.push("/placeorder")
+    
   }
   return (
     <>
@@ -82,6 +118,7 @@ const checkout2 = () => {
         >Submit</button>
       </main>
     </Layout>
+    <ToastContainer/>
     </>
   )
 }
