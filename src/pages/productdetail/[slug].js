@@ -42,6 +42,7 @@ const productDetail = () => {
       image2: "/images/assets/CJ_Back.png",
       image3: "/images/assets/Feeding_Guide.jpg",
       image4: "/images/assets/CJ.png",
+      productDesc: "Cherrypops Chicken Jerky is made with the highest quality Farm Fresh Chicken Breast. Hand cut and Slow dried for 12 hours at the optimum temperature to lock in all the flavours. We use only 2 ingredient- Chicken and Turmeric Chicken breast. Chicken breast is high protein content which helps in muscle building . Turmeric helps improve gut health and prevents gut bacteria. We do not use any fillers or bones or any artificial additives, flavours, colourings. Carbohydrate & Gluten Free - Carbohydrate causes bloating and gluten can cause allergies. So, there is no such ingredients in our products. No preservatives- The chicken jerky is handmade and hand packaged in 3 layer platic polymer packaging with oxygen absorbers. So no preservatives required."
      },
     {
       id: 2,
@@ -63,6 +64,8 @@ const productDetail = () => {
       image2: "/images/assets/FB_Back.png",
       image3: "/images/assets/FB_Guide.jpg",
       image4: "/images/assets/FB_Detail.jpg",
+      productDesc: "Cherrypops Fish Bites is made with the highest quality Locally sourced Fish. Cleaned, gutted and Slow dried for 12 hours at the optimum temperature to lock in all the flavours. We use only 2 ingredient- Fish and Turmeric. Fish has High protein content and good fats which promote muscle building and improve cardiovascular health. Turmeric helps improve gut health and prevents gut bacteria. We do not use any fillers or bones or any artificial additives, flavours, colourings. Carbohydrate & Gluten Free - Carbohydrate causes bloating and gluten can cause allergies. So, there is no such ingredients in our products. No preservatives- Our Fish Bites is handmade and hand packaged in 3 layer platic polymer packaging with oxygen absorbers. So no preservatives required."
+         
     }
   ]
 
@@ -105,7 +108,8 @@ const productDetail = () => {
         image1: newproduct.image1,
         image2: newproduct.image2,
         image3: newproduct.image3,
-        image4: newproduct.image4
+        image4: newproduct.image4,
+        productDesc: newproduct.productDesc
       }
 
       dispatch(addToCartaction(qty,data))
@@ -135,6 +139,7 @@ const productDetail = () => {
       <Layout>
         {
           newproduct &&
+          <div>
           <div className='product-detail-container'>
             <div>
               <div className='image-container'>
@@ -226,6 +231,11 @@ const productDetail = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div>
+                 <h2 className='font-bold text-5xl my-8 md:my-16'>Description:</h2>
+                 <p className='product-desc'>{newproduct.productDesc}</p>
+              </div>
           </div>
         }
 

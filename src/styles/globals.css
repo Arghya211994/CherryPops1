@@ -249,6 +249,13 @@
   color: #324D67;
 }
 
+ .product-desc {
+       font-weight: 300;
+      font-size: 17px;
+       color: #324D67;
+       text-align: justify;
+     }
+
 .price .old-price,
 .product-price .old-price,
 .price .old-price {

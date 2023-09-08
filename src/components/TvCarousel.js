@@ -20,14 +20,17 @@ const TvCarousel = () => {
               showArrows={false}
             >
               <div className='carousel-img'>
-                <img src="https://c8.alamy.com/comp/2BEAFRR/tv-news-studio-with-broadcaster-and-breaking-world-background-vector-illustration-breaking-news-on-tv-broadcasting-journalist-2BEAFRR.jpg" alt='img1' />
-              </div>
-              <div className='carousel-img'>
-                <img src="https://pbs.twimg.com/amplify_video_thumb/1360141322154217476/img/9aOnlC9PWflzsx3O.jpg" alt='img2' />
-              </div>
-              <div className='carousel-img'>
-                <img src="https://www.shutterstock.com/shutterstock/photos/442698565/display_1500/stock-vector-news-anchor-on-tv-breaking-news-background-442698565.jpg" alt='img3' />
-              </div>
+<img src="/images/Assets/tvCarousel1.jpg" alt='img1' />
+</div>
+<div className='carousel-img'>
+<img src="/images/Assets/tvCarousel2.jpg" alt='img2' />
+</div>
+<div className='carousel-img'>
+<img src="/images/Assets/tvCarousel3.jpg" alt='img3' />
+</div>
+<div className='carousel-img'>
+<img src="/images/Assets/tvCarousel4.jpg" alt='img4' />
+</div>
             </Carousel>
           </div>
         </div>

@@ -6,7 +6,6 @@ import Layout from './Layout'
 const ProductEffective = () => {
     return (
         <>
-            <Layout>
                 <h2 className='font-bold text-5xl mt-16 w-full text-center md:text-4xl xs:text-3xl md:mb-16'>Our product effectiveness</h2>
 
                 <div className="grid grid-cols-2 mt-32 md:mt-16 md:grid-cols-1 h-60vh">
@@ -62,7 +61,6 @@ const ProductEffective = () => {
 
                 </div>
 
-            </Layout>
         </>
     )
 }
