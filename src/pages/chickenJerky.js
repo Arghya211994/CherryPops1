@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import ChickenJerky from "../../public/images/assets/1.png"
 import JerkyDetail from "../../public/images/assets/CJ.png"
-import JerkyBack from "../../public/images/assets/CJ_Back.jpg"
+import JerkyBack from "../../public/images/assets/CJ_Back.png"
 import Guide from "../../public/images/assets/Feeding_Guide.jpg"
 import Image from 'next/image'
 import Layout from '@/components/Layout';

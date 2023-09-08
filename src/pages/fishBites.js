@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 import FishBites from "../../public/images/assets/3.png"
-import FBback from "../../public/images/assets/FB_Back.jpg"
+import FBback from "../../public/images/assets/FB_Back.png"
 import FBguide from "../../public/images/assets/FB_Guide.jpg"
 import FBdetail from "../../public/images/assets/FB_Detail.jpg"
 
