@@ -163,6 +163,7 @@ const productDetail = () => {
                       height={60}
                       onMouseEnter={() => changehandler(index)}
                       alt='SmallImage'
+                      className='small-image'
                     />
                   ))
                 }
