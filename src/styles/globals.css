@@ -229,7 +229,7 @@
 /* Media query for small screens */
 @media screen and (max-width: 768px) {
   .small-images-container{
-    margin-left: -10px;
+    margin-left: -20px;
   }
   .small-image {
     border-radius: 8px;
