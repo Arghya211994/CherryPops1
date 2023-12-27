@@ -225,6 +225,18 @@
   cursor: pointer;
 }
 
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  .small-image {
+    border-radius: 8px;
+    width: 60px; /* Adjust image width as needed */
+    height: 60px; /* Adjust image height as needed */
+    cursor: pointer;
+    /* Additional styles for images */
+  }
+}
+
 .selected-image {
   border: 1px solid #324d67;
 }

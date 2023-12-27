@@ -153,6 +153,9 @@ const productDetail = () => {
                   alt='DetailImage'
                 />
               </div>
+              <div class="small-images-scroll-container">
+                
+              </div>
               <div
                 className='small-images-container'>
                 {
