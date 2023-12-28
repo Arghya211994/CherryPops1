@@ -229,11 +229,11 @@
 /* Media query for small screens */
 @media screen and (max-width: 768px) {
   .small-images-container{
-    margin-left: -20px;
+    margin-left: -30px;
   }
   .small-image {
     border-radius: 8px;
-    width: 65px; /* Adjust image width as needed */
+    width: 60px; /* Adjust image width as needed */
     height: 60px; /* Adjust image height as needed */
     cursor: pointer;
    
